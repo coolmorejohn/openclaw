@@ -1,11 +1,9 @@
 services:
   - type: web
     name: openclaw
-    runtime: image
+    runtime: docker
     plan: standard
-    image:
-      url: ghcr.io/openclaw/openclaw:latest
-    dockerCommand: bash /app/start.sh
+    dockerfilePath: ./Dockerfile.render
     envVars:
       - key: OPENCLAW_GATEWAY_PORT
         value: "10000"
