@@ -1,0 +1,8 @@
+FROM ghcr.io/openclaw/openclaw:latest
+
+USER root
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+USER node
+
+CMD ["/app/start.sh"]
