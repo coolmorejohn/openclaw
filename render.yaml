@@ -3,7 +3,6 @@ services:
     name: openclaw
     runtime: image
     plan: standard
-    healthCheckPath: /health
     image:
       url: ghcr.io/openclaw/openclaw:latest
     dockerCommand: openclaw gateway --bind lan --port 10000 --allow-unconfigured
@@ -21,4 +20,4 @@ services:
     disk:
       name: openclaw-data
       mountPath: /data
-      sizeGB: 1
+      sizeGB: 10
